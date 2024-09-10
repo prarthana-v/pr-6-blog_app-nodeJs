@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="/css/dashboard.css" /> -->
+    <style>
+      /* Sidebar Customization */
+      #sidebar {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        background-color: #343a40;
+      }
+
+      #sidebar h3 {
+        font-size: 1.5rem;
+      }
+
+      #sidebar .nav-link {
+        color: #cfd8dc;
+        font-size: 1.2rem;
+        margin: 10px 0;
+        padding: 10px 15px;
+        border-radius: 8px;
+      }
+
+      #sidebar .nav-link.active,
+      #sidebar .nav-link:hover {
+        background-color: #495057;
+        color: #fff;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      #sidebar .nav-link i {
+        margin-right: 10px;
+      }
+
+      /* Main Content Styling */
+      main {
+        margin-left: 17rem;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #343a40;
+      }
+
+      /* Cards for Dashboard Content */
+      .card {
+        border-radius: 10px;
+        background: linear-gradient(145deg, #f0f0f0, #cacaca);
+        box-shadow: 5px 5px 15px #aaaaaa, -5px -5px 15px #ffffff;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card h5 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #343a40;
+      }
+
+      .card p {
+        font-size: 1rem;
+        color: #6c757d;
+      }
+
+      .card .btn {
+        margin-top: 10px;
+        padding: 8px 20px;
+        border-radius: 20px;
+      }
+
+      /* Buttons Styling */
+      .btn-primary {
+        background-color: #6e8efb;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #a777e3;
+      }
+
+      .btn-secondary {
+        background-color: #f39c12;
+        border: none;
+      }
+
+      .btn-secondary:hover {
+        background-color: #e67e22;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+          <div class="position-sticky">
+            <h3 class="text-center text-white my-3">Admin Panel</h3>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">
+                  <i class="bi bi-house-door"></i> Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/add-blog">
+                  <i class="bi bi-pencil-square"></i> Add Blog
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/view-blog">
+                  <i class="bi bi-card-list"></i> View Blogs
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">
+                  <i class="bi bi-card-list"></i> logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">Welcome, Admin!</h1>
+          </div>
+
+          <!-- Dashboard content -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="card p-4 shadow-sm">
+                  <h5>Add New Blog</h5>
+                  <p>Start creating new content for your blog.</p>
+                  <a href="/add-blog" class="btn btn-primary">Add Blog</a>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="card p-4 shadow-sm">
+                  <h5>View Existing Blogs</h5>
+                  <p>Manage and review all your published blogs.</p>
+                  <a href="/view-blog" class="btn btn-secondary">View Blogs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+  </body>
+</html>

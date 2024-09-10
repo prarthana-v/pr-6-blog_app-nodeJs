@@ -1,0 +1,17 @@
+body {
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+}
+
+.card {
+  border-radius: 15px;
+}
+
+button {
+  background-color: #6e8efb;
+  border: none;
+}
+
+button:hover {
+  background-color: #a777e3;
+  transition: 0.3s;
+}
