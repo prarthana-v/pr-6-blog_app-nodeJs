@@ -5,14 +5,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      img {
+        object-fit: cover;
+      }
+    </style>
   </head>
   <body>
     <div class="page-wrapper">
       <div class="page-breadcrumb">
         <div class="row">
-          <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Dashboard</h4>
+          <% blogs.map((val,i)=>{%>
+          <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+              <img
+                src="<%= val.image %>"
+                height="300"
+                class="card-img-top"
+                alt=""
+              />
+              <div class="card-body px-0">
+                <h5 class="card-title"><%= val.title %></h5>
+                <p><%= val.content %></p>
+
+                <div
+                  class="col-12 px-0 d-flex justify-content-between align-items-end"
+                >
+                  <div class="col-6 px-0">
+                    <h6 class="mb-0">By <%= val.author %></h6>
+                  </div>
+                  <div class="col-6 text-right px-0">
+                    <a
+                      href="/updateblog?id=<%= val._id %>"
+                      class="btn btn-primary"
+                      >Edit</a
+                    >
+                    <a
+                      href="/deleteblog?id=<%= val._id %>"
+                      class="btn btn-secondary"
+                      >Delete</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <%})%>
         </div>
       </div>
       <div class="container-fluid"></div>

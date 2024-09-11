@@ -1,0 +1,79 @@
+<%- include('Header') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="page-breadcrumb">
+        <div class="row">
+          <div class="col-md-8 mb-4">
+            <form
+              action="/addblog"
+              method="POST"
+              class="card p-4 shadow-sm"
+              enctype="multipart/form-data"
+            >
+              <div class="form-group">
+                <label for="title">Blog Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  placeholder="Enter blog title"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="content">Content</label>
+                <textarea
+                  class="form-control"
+                  id="content"
+                  name="content"
+                  rows="5"
+                  placeholder="Enter blog content"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="author">Author Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="author"
+                  name="author"
+                  placeholder="Enter author name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input
+                  type="file"
+                  class="form-control"
+                  id="image"
+                  name="image"
+                />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Add Blog</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid"></div>
+      <footer class="footer text-center">
+        This is My_Blogs. Designed and Developed by
+        <a href="https://wrappixel.com">Prarthana Vaghani</a>.
+      </footer>
+    </div>
+  </body>
+</html>
+<%- include('Footer') %>

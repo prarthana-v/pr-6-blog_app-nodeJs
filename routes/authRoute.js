@@ -15,9 +15,9 @@ routes.get("/", login);
 routes.post("/loginUser", loginUser);
 routes.get("/register", register);
 routes.post("/registerUser", registerUser);
-routes.get("/dashboard", dashboard);
+// routes.get("/dashboard", dashboard);
 routes.get("/logout", logout);
 
-routes.get("/dash", dash);
+routes.get("/dashboard", dashboard);
 
 module.exports = routes;

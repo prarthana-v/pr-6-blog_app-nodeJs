@@ -9,6 +9,7 @@ const cookie = require("cookie-parser");
 app.use(cookie());
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(express.urlencoded());
 app.set("view engine", "ejs");

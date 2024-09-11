@@ -1,4 +1,5 @@
 const userModel = require("../models/UserModel");
+const BlogModel = require("../models/BlogModel");
 
 const login = (req, res) => {
   if (req.cookies["auth"]) {
@@ -11,16 +12,27 @@ const register = (req, res) => {
   return res.render("register");
 };
 
-const dash = (req, res) => {
-  return res.render("dash");
-};
-
-const dashboard = (req, res) => {
+const dashboard = async (req, res) => {
   if (!req.cookies["auth"]) {
     return res.redirect("/");
   }
-  return res.render("dashboard");
+
+  try {
+    const blogs = await BlogModel.find({});
+    console.log(blogs);
+    return res.render("dash", {
+      blogs: blogs,
+    });
+  } catch (error) {
+    console.log("dashborad", error);
+    return false;
+  }
 };
+
+// const dashboard = (req, res) => {
+
+//   return res.render("dashboard");
+// };
 
 const registerUser = async (req, res) => {
   try {
@@ -69,5 +81,4 @@ module.exports = {
   loginUser,
   dashboard,
   logout,
-  dash,
 };

@@ -1,0 +1,105 @@
+<%- include('Header') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    img {
+      object-fit: cover;
+    }
+  </style>
+  <body>
+    <div class="page-wrapper">
+      <div class="page-breadcrumb">
+        <div class="row">
+          <div class="col-md-8 mb-4">
+            <h4 class="mb-3">Edit your Blog</h4>
+            <form
+              action="/updateblog"
+              method="POST"
+              class="card p-4 shadow-sm"
+              enctype="multipart/form-data"
+            >
+              <input type="hidden" name="_id" value="<%= blog._id %>" />
+              <div class="form-group">
+                <label for="title">Blog Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  name="title"
+                  placeholder="Enter blog title"
+                  value="<%= blog.title %>"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="content">Content</label>
+                <textarea
+                  class="form-control"
+                  id="content"
+                  name="content"
+                  rows="5"
+                  placeholder="Enter blog content"
+                >
+<%= blog.content %></textarea
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="author">Author Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="author"
+                  name="author"
+                  placeholder="Enter author name"
+                  value="<%= blog.author %>"
+                  required
+                />
+              </div>
+
+              <div class="col-12 d-flex form-group px-0">
+                <div class="col-6 px-0">
+                  <label for="image">Upload Image</label>
+                  <br />
+                  <small>Choose if u want to upload new file </small>
+                  <br />
+                  <input type="file" class="" id="image" name="image" />
+                </div>
+                <div class="col-6">
+                  <br />
+                  <img
+                    src="<%= blog.image %>"
+                    class=""
+                    width="300"
+                    height="200"
+                    alt=""
+                  />
+                  <br />
+                  <small>This is your current file</small>
+                  <input
+                    type="hidden"
+                    value="<%= blog.image %>"
+                    name="existingImage"
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Update Blog</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid"></div>
+      <footer class="footer text-center">
+        This is My_Blogs. Designed and Developed by
+        <a href="https://wrappixel.com">Prarthana Vaghani</a>.
+      </footer>
+    </div>
+  </body>
+</html>
+<%- include('Footer') %>
